@@ -51,4 +51,5 @@ def convert_mp4_to_mp3():
     return send_file(temp_mp3_path, as_attachment=True, download_name='converted.mp3')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
